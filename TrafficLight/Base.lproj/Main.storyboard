@@ -2,9 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4352" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,24 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="DDu-TQ-xcl">
-                                <rect key="frame" x="137.66666666666666" y="252" width="138.99999999999997" height="392"/>
+                                <rect key="frame" x="137.66666666666669" y="252" width="138.66666666666669" height="392"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXP-5l-e90">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="77.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="77.333333333333329"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="50"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WAIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJI-2z-vKJ">
-                                        <rect key="frame" x="0.0" y="157.33333333333331" width="139" height="77.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="157.33333333333331" width="138.66666666666666" height="77.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="50"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WALK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCs-cx-X6r">
-                                        <rect key="frame" x="0.0" y="314.66666666666663" width="139" height="77.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="314.66666666666663" width="138.66666666666666" height="77.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="50"/>
                                         <nil key="textColor"/>
@@ -46,10 +45,14 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-Pn-Tfb">
                                 <rect key="frame" x="108" y="745" width="198" height="57"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="Push to walk">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedPushButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="gV3-Mj-RUB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -61,6 +64,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HkQ-Pn-Tfb" secondAttribute="bottom" constant="60" id="trg-cI-0pp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLight" destination="qCs-cx-X6r" id="7jw-JO-ZzQ"/>
+                        <outlet property="lights" destination="DDu-TQ-xcl" id="m88-th-lc9"/>
+                        <outlet property="pushButton" destination="HkQ-Pn-Tfb" id="yHC-N4-C9P"/>
+                        <outlet property="redLight" destination="SXP-5l-e90" id="9Im-7L-C5R"/>
+                        <outlet property="yellowLight" destination="bJI-2z-vKJ" id="F26-Kq-tCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,9 +78,9 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
