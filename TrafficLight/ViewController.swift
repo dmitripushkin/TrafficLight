@@ -19,7 +19,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var greenLight: UILabel!
     
-    var count = 0
+    enum LightColor {
+        case red
+        case yellow
+        case green
+        case off
+    }
+    
+    var lightColorSet: LightColor = .off
     
     
     override func viewDidLoad() {
@@ -44,31 +51,44 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tappedPushButton() {
-   
-        if count > 3 {
-            count = 0
-        }
+        pushButton.setTitle("Push again", for: .normal)
         
-        switch count {
-        case 1:
+      
+        
+        
+        switch lightColorSet {
+        case .red:
+            pushButton.setTitle("Push", for: .normal)
+            
             redLight.alpha = 1
             yellowLight.alpha = 0.3
             greenLight.alpha = 0.3
-            count += 1
-        case 2:
+          
+            lightColorSet = .yellow
+            
+        case .yellow:
+            pushButton.setTitle("One more time", for: .normal)
+            
             redLight.alpha = 0.3
             yellowLight.alpha = 1
             greenLight.alpha = 0.3
-            count += 1
-        case 3:
+            
+            lightColorSet = .green
+            
+        case .green:
+            pushButton.setTitle("WALK!", for: .normal)
+            
             redLight.alpha = 0.3
             yellowLight.alpha = 0.3
             greenLight.alpha = 1
-            count += 1
-    
-        default:
-            count += 1
+            
+            lightColorSet = .red
+      
+        case .off:
+            lightColorSet = .red
+        }
+       
         }
 
 }
-}
+
